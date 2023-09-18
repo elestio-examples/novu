@@ -94,6 +94,8 @@ environments:
     value: "https://[CI_CD_DOMAIN]:2443/embed.umd.min.js"
   - key: "WIDGET_URL"
     value: "https://[CI_CD_DOMAIN]:3443"
+  - key: "NEW_RELIC_APP_NAME"
+    value: "novu"
 
 config:
   runTime: "dockerCompose"
