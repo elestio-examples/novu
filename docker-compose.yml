@@ -65,7 +65,7 @@ services:
     depends_on:
       - mongodb
       - redis
-    restart: always"
+    restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
       MONGO_URL: ${MONGO_URL}
