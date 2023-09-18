@@ -1,0 +1,16 @@
+#set env vars
+set -o allexport; source .env; set +o allexport;
+
+
+JWT_SECRET=${JWT_SECRET:-`openssl rand -hex 16`}
+STORE_ENCRYPTION_KEY=${STORE_ENCRYPTION_KEY:-`openssl rand -hex 16`}
+AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-`openssl rand -hex 16`}
+AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-`openssl rand -hex 16`}
+
+cat << EOT >> ./.env
+
+JWT_SECRET=${JWT_SECRET}
+STORE_ENCRYPTION_KEY=${STORE_ENCRYPTION_KEY}
+AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+EOT
