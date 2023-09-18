@@ -15,6 +15,38 @@ ports:
     public: true
     path: "/"
     isAuth: false
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "5443"
+    targetPort: "4566"
+    targetIP: "172.17.0.1"
+    public: true
+    path: "/"
+    isAuth: false
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "4443"
+    targetPort: "4402"
+    targetIP: "172.17.0.1"
+    public: true
+    path: "/"
+    isAuth: false
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "3443"
+    targetPort: "4500"
+    targetIP: "172.17.0.1"
+    public: true
+    path: "/"
+    isAuth: false
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "2443"
+    targetPort: "4701"
+    targetIP: "172.17.0.1"
+    public: true
+    path: "/"
+    isAuth: false
 environments:
   - key: "ADMIN_EMAIL"
     value: "[EMAIL]"
@@ -33,7 +65,7 @@ environments:
   - key: "REDIS_CACHE_SERVICE_HOST"
     value: "redis"
   - key: "S3_LOCAL_STACK"
-    value: "http://localstack:4566"
+    value: "https://[CI_CD_DOMAIN]:5443"
   - key: "S3_BUCKET_NAME"
     value: "novu"
   - key: "S3_REGION"
@@ -49,7 +81,7 @@ environments:
   - key: "REACT_APP_WS_URL"
     value: "3002"
   - key: "REACT_APP_WS_URL"
-    value: "http://ws:3002"
+    value: "https://[CI_CD_DOMAIN]:4443"
   - key: "REACT_APP_API_URL"
     value: "https://[CI_CD_DOMAIN]:6443"
   - key: "API_ROOT_URL"
@@ -59,9 +91,9 @@ environments:
   - key: "FRONT_BASE_URL"
     value: "https://[CI_CD_DOMAIN]"
   - key: "WIDGET_EMBED_PATH"
-    value: "http://embed:4701/embed.umd.min.js"
+    value: "https://[CI_CD_DOMAIN]:2443/embed.umd.min.js"
   - key: "WIDGET_URL"
-    value: "http://widget:4500"
+    value: "https://[CI_CD_DOMAIN]:3443"
 
 config:
   runTime: "dockerCompose"
