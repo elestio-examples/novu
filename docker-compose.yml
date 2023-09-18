@@ -12,6 +12,7 @@ services:
     image: "localstack/localstack:0.14.5"
     environment:
       - SERVICES=s3
+      - DATA_DIR=/tmp/localstack/novu
     ports:
       - "172.17.0.1:4566:4566"
     volumes:

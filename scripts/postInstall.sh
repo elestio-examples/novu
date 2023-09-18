@@ -15,5 +15,7 @@ curl http://${target}/v1/auth/register \
   -H 'content-type: application/json' \
   -H 'pragma: no-cache' \
   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36' \
-  --data-raw '{"firstName":"admin","lastName":"admin","email":"'${ADMIN_EMAIL}'","password":"'${ADMIN_PASSWORD}'' \
+  --data-raw '{"firstName":"admin","lastName":"admin","email":"'${ADMIN_EMAIL}'","password":"'${ADMIN_PASSWORD}'"}' \
   --compressed
+
+docker-compose exec -T localstack bash -c "awslocal s3api create-bucket --bucket novu"
