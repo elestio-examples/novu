@@ -48,7 +48,7 @@ To integrate Novu with your Node.js project, follow these steps:
         import { Novu } from '@novu/node';
 
         const config = {
-            backendUrl: "<YOUR_API_URL>",
+            backendUrl: "https://[CI_CD_DOMAIN]:6443",
         };
 
         const novu = new Novu('<NOVU_API_KEY>', config);
@@ -58,7 +58,7 @@ To integrate Novu with your Node.js project, follow these steps:
         const { Novu } = require("@novu/node");
 
         const config = {
-            backendUrl: "<YOUR_API_URL>",
+            backendUrl: "https://[CI_CD_DOMAIN]:6443",
         };
 
         const novu = new Novu("<NOVU_API_KEY>", config);
